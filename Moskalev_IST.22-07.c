@@ -8,22 +8,22 @@ int main(){
     double res, num1, num2;
     char a='y';
     while(a=='y' || a=='Y'){
-    printf("If you want to calculate:\n\nz=arcccos(y)+ln(x)\t,enter 1\n\nIf you want to calculate:\n\n\t1+|x|\t,if x <= -6\ny=\t(e^x)+1\t,if 0 < x <= 2\t,enter 2\n\tsin(x)\t,if x > 12\n");
-    scanf("%d", &n);
-    if (n==1){
-        printf("Enter y and x : ");
-        scanf("%lf %lf", &num1, &num2);
-        res=task1(num1, num2);
-        printf("\ny=%lf\n", res);
-    }
-    if (n==2){
-        printf("Enter x : ");
-        scanf("%lf", &num1);
-        res=task2(num1);
-        printf("\ny=%lf\n", res);
-    }
-    printf("Run again? : y\\n");
-    scanf(" %c", &a);
+        printf("If you want to calculate:\n\nz=arcccos(y)+ln(x)\t,enter 1\n\nIf you want to calculate:\n\n\t1+|x|\t,if x <= -6\ny=\t(e^x)+1\t,if 0 < x <= 2\t,enter 2\n\tsin(x)\t,if x > 12\n");
+        scanf("%d", &n);
+        if (n==1){
+            printf("Enter y and x : ");
+            scanf("%lf %lf", &num1, &num2);
+            res=task1(num1, num2);
+            printf("\ny=%lf\n", res);
+        }
+        if (n==2){
+            printf("Enter x : ");
+            scanf("%lf", &num1);
+            res=task2(num1);
+            printf("\ny=%lf\n", res);
+        }
+        printf("Run again? : y\\n");
+        scanf(" %c", &a);
     }
 }
 double task1 (double y, double x){
