@@ -11,8 +11,10 @@ int main(){
         printf("If you want to calculate:\n\nz=arcccos(y)+ln(x)\t,enter 1\n\nIf you want to calculate:\n\n     /\n    | 1+|x|\t,if x <= -6\ny = < (e^x)+1\t,if 0 < x <= 2\t,enter 2\n    | sin(x)\t,if x > 12\n     \\\n");
         scanf("%d", &n);
         if (n==1){
-            printf("Enter y and x : ");
-            scanf("%lf %lf", &num1, &num2);
+            printf("Enter y : ");
+            scanf("%lf", &num1);
+            printf("Enter x : ");
+            scanf("%lf", &num2);
             res=task1(num1, num2);
             printf("\ny=%lf\n", res);
         }
