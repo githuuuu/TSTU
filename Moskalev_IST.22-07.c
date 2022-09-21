@@ -8,7 +8,7 @@ int main(){
     double res, num1, num2;
     char a='y';
     while(a=='y' || a=='Y'){
-        printf"If you want to calculate:\n\nz=arcccos(y)+ln(x)\t,enter 1\n\nIf you want to calculate:\n\n     /\n    | 1+|x|\t,if x <= -6\ny = < (e^x)+1\t,if 0 < x <= 2\t,enter 2\n    | sin(x)\t,if x > 12\n     \\\n");
+        printf("If you want to calculate:\n\nz=arcccos(y)+ln(x)\t,enter 1\n\nIf you want to calculate:\n\n     /\n    | 1+|x|\t,if x <= -6\ny = < (e^x)+1\t,if 0 < x <= 2\t,enter 2\n    | sin(x)\t,if x > 12\n     \\\n");
         scanf("%d", &n);
         if (n==1){
             printf("Enter y and x : ");
