@@ -3,8 +3,8 @@
 #include <math.h>
 double task1 (double y, double x);
 double task2 (double x);
-int main()
-{   int n;
+int main(){   
+    int n;
     double res, num1, num2;
     char a='y';
     while(a=='y' || a=='Y'){
