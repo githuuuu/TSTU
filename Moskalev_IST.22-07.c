@@ -22,7 +22,7 @@ int main(){
             res=task2(num1);
             printf("\ny=%lf\n", res);
         }
-        printf("Run again? : y\\n");
+        printf("Run again? : y\\n ");
         scanf(" %c", &a);
     }
 }
