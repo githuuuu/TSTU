@@ -14,7 +14,11 @@ int main(){
 }
 double task1 (double y, double x){
     double r;
-    if(y>=-1 && y<=1 && x>=-1 && x<=1){
+    if(x+y<=1 && x<0){
+        r=exp(2*x)+y;
+        return r;
+    }
+    if(pow(x,2)+pow(y,2)<=1 && x>=0){
         r=exp(2*x)+y;
         return r;
     }
