@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <math.h>
 double task1 (double y, double x);
