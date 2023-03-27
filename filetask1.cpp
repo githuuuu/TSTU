@@ -46,6 +46,7 @@ void readFile(string filename) {
 		}
 		cout << "Max: " << res << endl;
 		Myfile.clear();
+		Myfile.seekp(ios::beg);
 		getline(Myfile, Text);
 		res = atoi(Text.c_str());
 		Myfile.clear();
@@ -56,6 +57,7 @@ void readFile(string filename) {
 		cout << "min: " << res << endl;
 		res = 0;
 		Myfile.clear();
+		Myfile.seekp(ios::beg);
 		while (getline(Myfile, Text)) {
 			num = atoi(Text.c_str());
 			if (num % 2 == 0) res++;
