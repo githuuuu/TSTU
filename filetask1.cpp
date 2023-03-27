@@ -6,15 +6,16 @@ using namespace std;
 
 void writeFile(string);
 void readFile(string);
-fstream& Goto(fstream&, int);
+void readFile2(string);
 int min(string);
 int max(string);
 int findeven(string);
 
 int main() {
-	string filename = "Z:\p\shite3\filename.txt";
+	string filename = "Z:/p/shite3/filename.txt";
 	writeFile(filename);
 	readFile(filename);
+	readFile2(filename);
 }
 
 void writeFile(string filename) {
@@ -61,4 +62,17 @@ void readFile(string filename) {
 		}
 		cout << res << " even numbers" << endl;
 	}
+	Myfile.close();
+}
+void readFile2(string filename) {
+	string Text;
+	fstream Myfile(filename);
+	if (!Myfile.is_open()) {
+		cout << "Unable to open file";
+	}
+	else 
+		while (getline(Myfile, Text)) {
+			cout << Text << endl;
+		}
+	Myfile.close();
 }
