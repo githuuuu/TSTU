@@ -156,9 +156,9 @@ int main() {
 			}
 		}
 	}
-	for (int i = 0; i < inp.size(); i++) {
+	/*for (int i = 0; i < inp.size(); i++) {
 		inp[i].disp();
-	}
+	}*/
 
 	/*~~~~~~~~~~Алгоритм сортировочной станции~~~~~~~~~~~~*/
 	for (int i = 0; i < inp.size(); i++) {
