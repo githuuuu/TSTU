@@ -9,19 +9,17 @@ using namespace std;
 enum toktype { num, negnum, power, mult, divide, add, sub, leftpar, rightpar, func, negfunc };
 class tok {
 public:
-	toktype type{};//число, оператор, функция и тд
-	string content;
+	toktype type{};
+	string content;//for numbers stores value, for operators stores precedence
 
-	/*проверяет правильно ли работает токенизатор
 	void disp(){
 		if (type == 2) std::cout << '^' << "[" << type << "]" << " ";
 		if (type == 3) std::cout << '*' << "[" << type << "]" << " ";
 		if (type == 4) std::cout << '/' << "[" << type << "]" << " ";
 		if (type == 5) std::cout << '+' << "[" << type << "]" << " ";
 		if (type == 6) std::cout << '-' << "[" << type << "]" << " ";
-		if (type<power || type>sub) std::cout << content << "[" << type << "]" << " ";*/
+		if (type<power || type>sub) std::cout << content << "[" << type << "]" << " ";
 	}
-	//выводит токенизированное выражение 
 	void disp2() {
 		if (type == 2) std::cout << '^' << " ";
 		if (type == 3) std::cout << '*' << " ";
@@ -42,7 +40,7 @@ int main() {
 	getline(cin, expression);
 	std::cout << "Your expression: " << expression << endl << endl;
 	int i = 0;
-/*токенизатор*/
+
 	while (i < expression.length()) {
 		while (expression[i] == ' ') {
 			i++;
@@ -118,7 +116,7 @@ int main() {
 		inp.push_back(buf1);
 
 	}
-	/*убирает лишние токены*/ 
+	/*redacts input*/
 	for (int j = 1; j < inp.size() - 1; j++) {
 		if (inp[j].type == negnum) {
 			if (inp[j - 1].type == leftpar) {
@@ -129,7 +127,6 @@ int main() {
 			}
 		}
 	}
-	/*заменяет константные функции на их значения*/
 	for (int j = 0; j < inp.size(); j++) {
 		if (inp[j].type == func) {
 			if (inp[j].content == "pi") {
@@ -157,13 +154,14 @@ int main() {
 			}
 		}
 	}
-	/*for (int i = 0; i < inp.size(); i++) {
+	for (int i = 0; i < inp.size(); i++) {
 		inp[i].disp();
-	}*/
+	}
 
-	/*~~~~~~~~~~Алгоритм сортировочной станции~~~~~~~~~~~~*/
+	/*~~~~~~~~~~shunting yard~~~~~~~~~~~~*/
 	for (int i = 0; i < inp.size(); i++) {
 		buf1 = inp[i];
+		//cout << endl << endl << buf1.content << endl << buf1.type << endl;
 		if (buf1.type == num || buf1.type == negnum) {
 			out.push_back(buf1);
 		}
@@ -221,7 +219,7 @@ int main() {
 		out[i].disp2();
 	}
 
-	/*~~~~~~~~~~~калькулятор~~~~~~~~~~~~*/
+	/*~~~~~~~~~~~calculation~~~~~~~~~~~~*/
 
 	double buf2{}, buf3{};
 	for (int i = 0; i < out.size(); i++) {
