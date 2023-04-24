@@ -216,7 +216,7 @@ int main() {
 		if (oper.empty()) break;
 	}
 
-	std::cout << endl;
+	std::cout << endl<< "Your expression in postfix notation: ";
 	for (int i = 0; i < out.size(); i++) {
 		out[i].disp2();
 	}
